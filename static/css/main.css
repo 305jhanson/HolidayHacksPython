@@ -1,5 +1,5 @@
 body, html {
-    background-image: url("christmas.jpg");
+    background-image: url("../static/css/christmas.jpg");
     margin: 0;
     font-family: sans-serif;
 }
