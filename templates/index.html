@@ -23,16 +23,17 @@
             </tr>
             {% for task in tasks %}
             <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.content }}</td>
-                <td>{{ task.content }}</td>
-                <td>{{ task.content }}</td>
-                <td>{{ task.content }}</td>
-                <td>{{ task.content }}</td>
+                <td>{{ task.name }}</td>
+                <td>{{ task.city }}</td>
+                <td>{{ task.organization }}</td>
+                <td>{{ task.address }}</td>
+                <td>{{ task.date }}</td>
+                <td>{{ task.rsvp }}</td>
+                <td>{{ task.description }}</td>
                 <td>{{ task.date_created.date() }}</td>
                 <td>
                     <a href="/delete/{{task.id}}">Delete</a>
-                    <br>
+                    <a href="/rsvp/{{task.id}}">RSVP</a>
                     <a href="/update/{{task.id}}">Update</a>
                 </td>
             </tr>
@@ -48,6 +49,7 @@
                 <input type="text" name="addy" id="addy">
                 <input type="text" name="date" id="date">
                 <input type="number" name="rsvp" id="rsvp">
+                <input type="text" name="description" id="description">
                 <input type="submit" value="Add Task">
             </form>
         </div>

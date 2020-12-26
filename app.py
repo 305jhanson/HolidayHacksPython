@@ -28,17 +28,24 @@ def index():
         task_city = request.form['city']
         task_org = request.form['org']
         task_addy = request.form['addy']
-        task_date = request.form['content']
-        task_content = request.form['content']
+        task_date=request.form['date']
+        task_rsvp = request.form['rsvp']
+        task_discription = request.form['description']
 
-        new_task = Todo(task_name, task_city, task_org,)
-        
+        new_task = Todo(name=task_name,
+                        city=task_city,
+                        organization=task_org,
+                        address=task_addy,
+                        date=task_date,
+                        rsvp=task_rsvp,
+                        description=task_discription)
+
         try:
             db.session.add(new_task)
             db.session.commit()
             return redirect('/')
         except:
-            return 'Task could not be created'
+            return 'Event could not be created'
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks=tasks)
@@ -70,7 +77,21 @@ def update(id):
         return render_template('update.html', task=task_to_update)
         
 
+@app.route('/rsvp/<int:id>', methods=['GET', 'POST'])
+def rsvp(id):
+    task_to_update = Todo.query.get_or_404(id)
+    if request.method == 'POST':
+        try:
+            task_to_update.rsvp += 1
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'something wrong'
+    else:
+        return render_template('rsvp.html',task=task_to_update)
 
+    
+        
 
 if __name__ == "__main__":
     app.run(debug=True)
