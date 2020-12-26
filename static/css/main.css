@@ -1,9 +1,11 @@
 body, html {
+    background-image: url("christmas.jpg");
     margin: 0;
     font-family: sans-serif;
 }
 
 .content {
+
     margin: 0 auto;
     width: 400px;
 }
