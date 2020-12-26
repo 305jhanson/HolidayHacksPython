@@ -38,14 +38,25 @@ def delete(id):
 
     try:
         db.session.delete(task_to_delete)
-        db.session.commit()``
+        db.session.commit()
         return redirect('/')
     except:
         return 'something wrong'
     
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
-
+def update(id):
+    task_to_update = Todo.query.get_or_404(id)
+    if request.method == 'POST':
+        task_to_update.content = request.form['content']
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'something wrong'
+    else:
+        return render_template('update.html', task=task_to_update)
+        
 
 
 
