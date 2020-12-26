@@ -10,8 +10,14 @@
 
     <div class="form">
         <form action="/update/{{task.id}}" method="POST">
-            <input type="text" name="content" id="content" value="{{task.content}}">
-            <input type="submit" value="Update">
+            <input type="text" name="name" id="name" value="{{task.name}}">
+            <input type="text" name="city" id="city" value="{{task.city}}">
+            <input type="text" name="org" id="org" value="{{task.organization}}">
+            <input type="text" name="addy" id="addy" value="{{task.address}}">
+            <input type="text" name="date" id="date" value="{{task.date}}">
+            <input type="number" name="rsvp" id="rsvp" value="{{task.rsvp}}">
+            <input type="text" name="description" id="description" value="{{task.description}}">
+            <input type="submit" value="Update Task">
         </form>
     </div>
 </div>
