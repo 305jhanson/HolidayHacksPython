@@ -32,8 +32,15 @@ td {
 .form {
     margin-top: 20px;
     widows: 100%;
+    text-align: center;
 }
 
 #content {
     width: 100%;
+}
+
+.label {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
 }
