@@ -1,22 +1,33 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+<title>Gathering Finder Christams</title>
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Task Master</h1>
-    {% if tasks|length < 1 %} <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    <h1 style="text-align: center">Find a Gathering Below</h1>
+    {% if tasks|length < 1 %} <h4 style="text-align: center">There are no Events. Create one below!</h4>
         {% else %}
         <table>
             <tr>
-                <th>Task</th>
-                <th>Added</th>
+                <th>Event Name</th>
+                <th>City</th>
+                <th>Organization</th>
+                <th>Address</th>
+                <th>Date and Time</th>
+                <th>Number of RSVP</th>
+                <th>Description</th>
+                <th>Date Created</th>
                 <th>Actions</th>
             </tr>
             {% for task in tasks %}
             <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.content }}</td>
+                <td>{{ task.content }}</td>
+                <td>{{ task.content }}</td>
+                <td>{{ task.content }}</td>
                 <td>{{ task.content }}</td>
                 <td>{{ task.date_created.date() }}</td>
                 <td>
@@ -31,7 +42,12 @@
 
         <div class="form">
             <form action="/" method="POST">
-                <input type="text" name="content" id="content">
+                <input type="text" name="name" id="name">
+                <input type="text" name="city" id="city">
+                <input type="text" name="org" id="org">
+                <input type="text" name="addy" id="addy">
+                <input type="text" name="date" id="date">
+                <input type="number" name="rsvp" id="rsvp">
                 <input type="submit" value="Add Task">
             </form>
         </div>

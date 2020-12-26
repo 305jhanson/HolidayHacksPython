@@ -9,7 +9,13 @@ db = SQLAlchemy(app)
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(200), nullable=False)
+    name=db.Column(db.String(200), nullable=False)
+    city = db.Column(db.String(200), nullable=False)
+    organization = db.Column(db.String(200), nullable=False)
+    address = db.Column(db.String(200), nullable=False)
+    date = db.Column(db.String(200), nullable=False)
+    rsvp = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -18,8 +24,14 @@ class Todo(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
+        task_name = request.form['name']
+        task_city = request.form['city']
+        task_org = request.form['org']
+        task_addy = request.form['addy']
+        task_date = request.form['content']
         task_content = request.form['content']
-        new_task = Todo(content=task_content)
+
+        new_task = Todo(task_name, task_city, task_org,)
         
         try:
             db.session.add(new_task)
