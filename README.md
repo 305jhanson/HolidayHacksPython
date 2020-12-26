@@ -1,7 +1,8 @@
 # HolidayHacksPython
 
-install virtualenv pip3 python3
+install these: virtualenv pip3 python3
 
+commands below to run website:
 
 source env/bin/activate
 
