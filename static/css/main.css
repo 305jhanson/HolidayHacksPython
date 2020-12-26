@@ -1,13 +1,14 @@
 body, html {
-    background-image: url("../static/css/christmas.jpg");
+    
     margin: 0;
     font-family: sans-serif;
 }
 
 .content {
-
+    background-image: url("../css/christmas.jpg");
     margin: 0 auto;
-    width: 400px;
+    text-align: center;
+    width: 600px;
 }
 
 table, td, th {
