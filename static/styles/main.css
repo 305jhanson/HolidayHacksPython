@@ -13,10 +13,17 @@ body{
     width: 700px;
 }
 
+table{
+max-width: 700px;
+}
 table, td, th {
-    max-width: 700px;
     background-color: #ff3333;
     border: 1px solid #aaa;
+}
+
+td, th{
+    max-width: 100px;
+    word-wrap: break-word;
 }
 
 table {
