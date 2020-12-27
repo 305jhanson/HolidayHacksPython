@@ -10,10 +10,11 @@ body{
 .content {
     background-image: url(../styles/christmas2.jpg);
     margin: 0 auto;
-    width: 600px;
+    width: 700px;
 }
 
 table, td, th {
+    max-width: 700px;
     background-color: #ff3333;
     border: 1px solid #aaa;
 }

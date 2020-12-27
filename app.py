@@ -67,7 +67,13 @@ def delete(id):
 def update(id):
     task_to_update = Todo.query.get_or_404(id)
     if request.method == 'POST':
-        task_to_update.content = request.form['content']
+        task_to_update.name = request.form['name']
+        task_to_update.city = request.form['city']
+        task_to_update.organization = request.form['org']
+        task_to_update.address = request.form['addy']
+        task_to_update.date=request.form['date']
+        task_to_update.rsvp = request.form['rsvp']
+        task_to_update.description = request.form['description']
         try:
             db.session.commit()
             return redirect('/')
